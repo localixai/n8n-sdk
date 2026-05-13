@@ -1,0 +1,74 @@
+{
+  "name": "SDK Example - Simple Webhook",
+  "nodes": [
+    {
+      "id": "webhook-node",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        300,
+        300
+      ],
+      "parameters": {
+        "path": "sdk-example-webhook",
+        "httpMethod": "GET",
+        "responseMode": "lastNode"
+      }
+    },
+    {
+      "id": "code-node",
+      "name": "Build Payload (JS)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        540,
+        300
+      ],
+      "parameters": {
+        "jsCode": "return items.map((item) => {\n  const query = item.json.query || {};\n  const name = typeof query.name === 'string' ? query.name : 'developer';\n\n  return {\n    ...item,\n    json: {\n      ok: true,\n      greeting: `Hello, ${name}!`,\n      source: 'n8n code node',\n      timestamp: new Date().toISOString(),\n    },\n  };\n});"
+      }
+    },
+    {
+      "id": "respond-node",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        820,
+        300
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Build Payload (JS)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Payload (JS)": {
+      "main": [
+        [
+          {
+            "node": "Respond",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
