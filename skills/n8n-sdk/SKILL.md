@@ -12,6 +12,15 @@ metadata:
 
 Use this skill when n8n should be managed as backend infrastructure from code (not manual UI clicks and not one-off MCP-only actions).
 
+## Installation
+
+Install the SDK in a project:
+
+```bash
+npm i @localixai/n8n-sdk
+```
+
+
 Trigger phrases:
 
 - "create workflow from code"
