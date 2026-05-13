@@ -60,6 +60,24 @@ Load only the file needed for the current task:
 2. `references/credential-and-variables.md` for credential rotation and variable handling.
 3. `references/validation-and-recovery.md` for post-change validation and failure triage.
 
+## TypeScript examples in this repository
+
+Canonical examples:
+
+- `docs/examples/basic-usage.ts`
+- `docs/examples/workflow-lifecycle.ts`
+- `docs/examples/sdk-simple-workflow-demo.ts`
+- `docs/examples/backend-control-plane.ts`
+- `docs/examples/telegram-hi-bot-cloudflare.ts`
+
+Skills-local mirrored examples (for skill consumers):
+
+- `skills/n8n-sdk/examples/basic-usage.ts`
+- `skills/n8n-sdk/examples/workflow-lifecycle.ts`
+- `skills/n8n-sdk/examples/sdk-simple-workflow-demo.ts`
+- `skills/n8n-sdk/examples/backend-control-plane.ts`
+- `skills/n8n-sdk/examples/telegram-hi-bot-cloudflare.ts`
+
 ## Validation loop
 
 1. Run code changes.

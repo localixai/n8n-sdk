@@ -31,6 +31,7 @@
     "test:watch": "vitest",
     "example:workflow": "tsx docs/examples/sdk-simple-workflow-demo.ts",
     "example:backend": "tsx docs/examples/backend-control-plane.ts",
+    "example:telegram-cloudflare": "tsx docs/examples/telegram-hi-bot-cloudflare.ts",
     "release:check": "npm run typecheck && npm run build && npm test && npm pack --dry-run",
     "release:prepare": "npm run release:check"
   },
@@ -56,6 +57,7 @@
   "devDependencies": {
     "@hey-api/openapi-ts": "^0.97.1",
     "@types/node": "^25.7.0",
+    "cloudflare": "^6.1.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3",
     "vitest": "^4.1.6"
