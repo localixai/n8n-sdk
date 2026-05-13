@@ -4,6 +4,9 @@ export default defineConfig({
   input: './openapi.json',
   output: {
     path: './src/generated',
+    module: {
+      extension: '.js',
+    },
   },
   plugins: [
     '@hey-api/typescript',

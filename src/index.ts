@@ -1,7 +1,7 @@
 // Public entry point for the n8n API SDK
 // Re-exports all generated types and service classes
 
-export * from './generated/index';
+export * from './generated/index.js';
 export {
 	createClient,
 	createConfig,
@@ -11,7 +11,7 @@ export {
 	type Config,
 	type RequestOptions,
 	type RequestResult,
-} from './generated/client';
+} from './generated/client/index.js';
 export {
 	Audit,
 	CommunityPackage,
@@ -27,4 +27,4 @@ export {
 	User,
 	Variables,
 	Workflow,
-} from './generated/sdk.gen';
+} from './generated/sdk.gen.js';

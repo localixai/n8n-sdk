@@ -61,12 +61,12 @@ const { data: execs } = await Execution.getExecutions({
 
 ## API Reference
 
-Documentation links:
+Documentation:
 
-- Usage Guide: `https://github.com/localixai/n8n-sdk/blob/main/docs/USAGE.md`
-- Release Standard: `https://github.com/localixai/n8n-sdk/blob/main/docs/RELEASE.md`
-- Examples: `https://github.com/localixai/n8n-sdk/tree/main/docs/examples`
-- OpenAPI Source: `https://github.com/localixai/n8n-sdk/blob/main/openapi.json`
+- [Usage Guide](https://github.com/localixai/n8n-sdk/blob/main/docs/USAGE.md): setup patterns and API usage examples.
+- [Release Standard](https://github.com/localixai/n8n-sdk/blob/main/docs/RELEASE.md): release process and quality gates.
+- [Examples](https://github.com/localixai/n8n-sdk/tree/main/docs/examples): runnable workflow and backend control-plane scenarios.
+- [OpenAPI Source](https://github.com/localixai/n8n-sdk/blob/main/openapi.json): canonical API schema used for SDK generation.
 
 ### Client setup
 
