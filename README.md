@@ -138,7 +138,7 @@ npm run build
 
 ## Release Standard
 
-- Process guide: `docs/RELEASE.md`
+- Process guide: [docs/RELEASE.md](docs/RELEASE.md)
 - Pre-release gate:
 
 ```bash
@@ -154,12 +154,6 @@ git push origin main --follow-tags
 
 Pushing tag `vX.Y.Z` triggers npm publish workflow automatically.
 
-Important for npm publish:
-
-1. GitHub secret `NPM_TOKEN` must be an npm Automation Token.
-2. A classic token on an account with 2FA-for-writes will fail in CI with `EOTP`.
-3. If publish logs show `npm error code EOTP`, replace the token with a new Automation Token from npm.
-
 ## Development
 
 ```bash
@@ -169,15 +163,14 @@ npm test            # Run unit tests
 npm run test:smoke  # Run live n8n smoke tests
 npm run example:workflow # Run full workflow CRUD demo via SDK
 npm run example:backend  # Run full backend control-plane demo
-npm run example:telegram-cloudflare # Run Telegram hi bot setup with Cloudflare validation
 ```
 
 ## Working Workflow Example
 
 This repository includes runnable TypeScript examples for end-to-end workflow lifecycle operations:
 
-- docs/examples/sdk-simple-workflow-demo.ts
-- docs/examples/workflow-lifecycle.ts
+- [docs/examples/sdk-simple-workflow-demo.ts](docs/examples/sdk-simple-workflow-demo.ts)
+- [docs/examples/workflow-lifecycle.ts](docs/examples/workflow-lifecycle.ts)
 
 Run it with:
 
@@ -191,8 +184,8 @@ npm run example:workflow
 
 For fully programmatic management (workflows, credential metadata, and secrets-like values), use:
 
-- docs/examples/backend-control-plane.ts
-- docs/examples/telegram-hi-bot-cloudflare.ts
+- [docs/examples/backend-control-plane.ts](docs/examples/backend-control-plane.ts)
+- [docs/examples](docs/examples)
 
 This scenario demonstrates:
 
@@ -209,29 +202,6 @@ N8N_BASE_URL=http://localhost:5678/api/v1 \
 N8N_API_KEY=your_api_key \
 npm run example:backend
 ```
-
-## Telegram Hi Bot + Cloudflare (TypeScript)
-
-Use `docs/examples/telegram-hi-bot-cloudflare.ts` for a TypeScript-only end-to-end example that:
-
-1. Validates Cloudflare account access via the official `cloudflare` npm package.
-2. Creates or updates Telegram credential (`telegramApi`).
-3. Creates or updates Telegram workflow that always replies with `hi`.
-4. Activates workflow via SDK.
-
-Run:
-
-```bash
-N8N_BASE_URL=http://localhost:5678/api/v1 \
-N8N_API_KEY=your_api_key \
-TELEGRAM_BOT_TOKEN=your_telegram_bot_token \
-CLOUDFLARE_API_TOKEN=your_cloudflare_api_token \
-CLOUDFLARE_ACCOUNT_ID=your_cloudflare_account_id \
-CLOUDFLARE_TUNNEL_PUBLIC_URL=https://your-public-tunnel.example \
-npm run example:telegram-cloudflare
-```
-
-Note: Telegram Trigger activation requires a publicly reachable HTTPS webhook URL.
 
 Note: n8n Public API does not return credential secret values on read endpoints.
 Credential creation requires `data` in request payload. In this repo example we use `httpHeaderAuth` with demo data.
