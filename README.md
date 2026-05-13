@@ -4,6 +4,12 @@ Type-safe TypeScript SDK for the [n8n Public API](https://docs.n8n.io/api/), aut
 
 Repository: [localixai/n8n-sdk](https://github.com/localixai/n8n-sdk)
 
+Install skill:
+
+```bash
+npx --yes skills add https://github.com/localixai/n8n-sdk --skill n8n-sdk
+```
+
 ## Features
 
 - Full TypeScript types for all request/response bodies
