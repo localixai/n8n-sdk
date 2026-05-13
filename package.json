@@ -1,6 +1,6 @@
 {
   "name": "@localixai/n8n-sdk",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Type-safe TypeScript SDK for the n8n Public API",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
