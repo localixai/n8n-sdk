@@ -10,7 +10,6 @@ npx skills add localixai/n8n-sdk
 
 Included skills:
 
-- `n8n-sdk-workflow-backend`
-- `n8n-sdk-release-docs`
+- `n8n-sdk`
 
 Each skill directory contains a `SKILL.md` file with metadata and operational instructions.

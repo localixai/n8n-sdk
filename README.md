@@ -240,8 +240,7 @@ npx skills add localixai/n8n-sdk
 
 Included skills:
 
-1. `n8n-sdk-workflow-backend`: full workflow/credential/variables control-plane operations.
-2. `n8n-sdk-release-docs`: release checks, docs generation, and publish/deploy standardization.
+1. `n8n-sdk`: full workflow/credential/variables control-plane operations.
 
 ## License
 
