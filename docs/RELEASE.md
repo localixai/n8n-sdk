@@ -7,6 +7,7 @@ This document defines the standard release process for this SDK.
 - Main branch is the source of truth.
 - npm publication is done by GitHub Actions workflow `publish.yml`.
 - Publication is triggered by pushing a semantic version tag: `vX.Y.Z`.
+- GitHub secret `NPM_TOKEN` must be an npm Automation Token for CI publishing.
 
 ## Standard update flow
 
@@ -58,3 +59,8 @@ If publish fails after a version tag is pushed:
 3. Push new tag with `--follow-tags`.
 
 Do not reuse an already published npm version.
+
+## npm authentication note
+
+- If GitHub Actions reaches `npm publish` and fails with `EOTP`, the token is not suitable for non-interactive CI publishing.
+- Use an npm Automation Token, store it as `NPM_TOKEN`, and rerun with a new version tag.

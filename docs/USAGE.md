@@ -8,7 +8,7 @@
 ## Configure client
 
 ```ts
-import { createClient, createConfig } from '@n8n/api-sdk';
+import { createClient, createConfig } from '@localixai/n8n-sdk';
 
 export const client = createClient(
   createConfig({
@@ -25,7 +25,7 @@ export const client = createClient(
 ### List workflows
 
 ```ts
-import { Workflow } from '@n8n/api-sdk';
+import { Workflow } from '@localixai/n8n-sdk';
 import { client } from './client';
 
 const { data, error } = await Workflow.getWorkflows({
@@ -40,7 +40,7 @@ console.log(data?.data);
 ### Create and delete workflow
 
 ```ts
-import { Workflow } from '@n8n/api-sdk';
+import { Workflow } from '@localixai/n8n-sdk';
 import { client } from './client';
 
 const { data: created, error: createError } = await Workflow.postWorkflows({
@@ -62,7 +62,7 @@ await Workflow.deleteWorkflowsById({
 ### List executions
 
 ```ts
-import { Execution } from '@n8n/api-sdk';
+import { Execution } from '@localixai/n8n-sdk';
 import { client } from './client';
 
 const { data, error } = await Execution.getExecutions({

@@ -1,4 +1,4 @@
-# @n8n/api-sdk
+# @localixai/n8n-sdk
 
 Type-safe TypeScript SDK for the [n8n Public API](https://docs.n8n.io/api/), auto-generated from the official OpenAPI spec.
 
@@ -15,17 +15,17 @@ Repository: [localixai/n8n-sdk](https://github.com/localixai/n8n-sdk)
 ## Installation
 
 ```bash
-npm install @n8n/api-sdk
+npm install @localixai/n8n-sdk
 # or
-pnpm add @n8n/api-sdk
+pnpm add @localixai/n8n-sdk
 # or
-bun add @n8n/api-sdk
+bun add @localixai/n8n-sdk
 ```
 
 ## Quick start
 
 ```typescript
-import { createClient, createConfig, Workflow, Execution, Tags } from '@n8n/api-sdk';
+import { createClient, createConfig, Workflow, Execution, Tags } from '@localixai/n8n-sdk';
 
 // Create and configure the client once
 const client = createClient(
@@ -71,7 +71,7 @@ Documentation links:
 ### Client setup
 
 ```typescript
-import { createClient, createConfig } from '@n8n/api-sdk';
+import { createClient, createConfig } from '@localixai/n8n-sdk';
 
 const client = createClient(
   createConfig({
@@ -147,6 +147,12 @@ git push origin main --follow-tags
 ```
 
 Pushing tag `vX.Y.Z` triggers npm publish workflow automatically.
+
+Important for npm publish:
+
+1. GitHub secret `NPM_TOKEN` must be an npm Automation Token.
+2. A classic token on an account with 2FA-for-writes will fail in CI with `EOTP`.
+3. If publish logs show `npm error code EOTP`, replace the token with a new Automation Token from npm.
 
 ## Development
 
